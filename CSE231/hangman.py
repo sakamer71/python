@@ -2,6 +2,7 @@ __author__ = 'skamer'
 
 from time import sleep
 
+
 wrong_guess_count = 0
 turncount = 1
 playagain='y'
