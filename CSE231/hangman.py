@@ -1,17 +1,21 @@
 __author__ = 'skamer'
 
 ###########################################################################################
+## v0.2 steve kamer 04/07/2014
+##
 ## basic hangman game
+## 7 chances to guess the word
 ## 2 player - alternates between guesser and word-setter within the game
 ## knows about punctuation
-## will match case-insensitive
+## will match letter guesses case-insensitive
+## clear screen differently based on execution via terminal or IDE
 ###########################################################################################
 
 
 from time import sleep
-from os import isatty
-from os import system
-from os import name
+#from os import isatty
+from os import isatty,system,name
+#from os import name
 
 turncount = 1
 playagain='y'
@@ -57,7 +61,6 @@ while playagain=='y':
     print "\n\n\n%s, choose a phrase and %s will try to guess it" %(setter, guesser)
     phrase = raw_input(prompt)
     print "\nOK Got it - setting up hangman for the phrase \"%s\"" %(phrase)
-    ## not using system clear function b/c i am running this from within IDE
     sleep(3)
     clear_screen_cmd()
     #print "\n"*80
@@ -67,8 +70,10 @@ while playagain=='y':
         playagain = raw_input('Wanna play again? (y/n) >')
         if playagain=='y' or playagain=='Y':
             print "Great, let's switch...\n"
+            sleep(2)
             clear_screen_cmd()
-            playagain='y'
+
+        playagain='y'
         else:
             playagain='n'
         return playagain
