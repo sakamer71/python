@@ -1,0 +1,41 @@
+What’s the difference between an integer and a float?
+	integer has no decimal places, float does
+What are booleans?
+	logical expressions, like true, false, and,or,not
+What does indentation do in Python code?
+	tells python when to start and stop 
+How do you do exponentiation in Python?
+	num1 ** exponent   or from math module math.pow(num,exponent)
+In the context of arithmetic operations, what does the % operator do?
+	divides left by right and returns the remainder, or 0 if there is no remainder
+What does it mean to comment your code? How do you do this in Python?
+	insert text to describe what you are coding and why
+	# to the left of single line comment
+	""" to start and end multiline comment (though not really a comment)
+What does it mean to escape a character in a string, and how do you do this in Python?
+	to tell python to treat a special character as it's literal value
+	put backslash before the special char
+Give some examples of escaped characters.
+	\# \' \" \\n
+What’s the difference between a variable and a value, and how do you declare (a.k.a., assign) a variable?
+	value is some data (string, number, list, etc) and variable is the name to reference it by  
+	declare a variable by writing 'variablename = something'
+Given my_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+How would you return a version of my_string in lower case?
+	print my_string.lower()
+How would you assign the letter "G" from my_string to a new variable (say, x) using subscripting?
+	x=my_string[6]
+What is string concatenation and how do you write it?
+	joining 2 strings together, done via the + operation
+	string1 + string2
+Using the datetime and % string formatting, how would you print a string of the current day in the form 12/22/2010?
+	option 1:  
+		from datetime import date
+		mydate = date.today().strftime('%x')
+	print mydate
+	option 2:
+		from datetime import date
+		mymonth = date.today().strftime('%m')
+		myday = date.today().strftime('%d')
+		myyear = date.today().strftime('%Y')
+		print "%s/%s/%s" %(mymonth,myday,myyear)
