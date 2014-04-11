@@ -1,0 +1,31 @@
+What is meant by "commenting out" code, and when might you want to do this?
+	to add # so that python does not execute it
+	used when you are trying to test/debug code, and only want a subset of your script to execute
+What’s the difference between = and == in Python?
+	= is to assign a variable, and == is to evaluate if left side equals right side
+What does % do as an arithmetic operator in Python? Separately, how can you use % when you’re printing strings?
+	divides, and returns the remainder of the division operation
+	% is used in string formatting to do substitution - i.e. to print variable values as part of a print statement
+What do %s, %r, and %d do in the context of string formatting?
+	%s substitutes a string data value,
+	%r substitutes a raw data value
+	%d substitutes a digit data value
+When you print a string that has \n in it, what happens?
+	\n is interpreted as newline in the output
+What’s the purpose of using triple quotes in Python (i.e., """)?
+	to print multiple-line statement with a single print command
+What would you have to do to get Python to print the following text: In Python, \n is used to print a new line ?
+	escape out the backslash in the \n, i.e. \\n
+When you’re doing string formatting, how can you force Python to print a specific number of decimal places? For instance, if you did x = 1.0/3.0 , and you want to print something that says One divided by three is roughly equal to 0.33, how can you get Python to format and substitute in your variable x without printing 12 decimal places?
+	use round function to round it off to 2 decimal points  
+	round(1.0/3.0,2)
+Make sure you understand how indexing works with new string formatting -- for instance: print "My first name is {0} and my last name is {1}. You can call me {0}".format("John", "Doe").
+Make sure you understand how named arguments work with new string formatting -- for instance: print "My first name is {first_name} and my last name is {last_name}. You can call me {first_name}".format(first_name = "Jane", last_name = "Doe").
+Write a script that creates boolean, string, integer and floating point variables and prints out the data type and value of each variable.
+	datatypes = {'mybool':True,'mystring':'steve','myint':10,'myfloat':3.14159}
+	for datatype in datatypes:
+		mytype=datatypes[datatype]
+		print "%s type is %s" %(mytype, type(mytype).__name__)
+If you were to summarize it in a sentence, what does None mean? Add a variable with value None to your script from question 11. What value and type does it output?
+	None is python's equivalent to null and is what you would use to pass or return a null value to a variable or function.
+	Null is of type NoneType - not boolean or other...
