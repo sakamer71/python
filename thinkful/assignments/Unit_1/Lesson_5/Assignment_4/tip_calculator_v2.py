@@ -1,5 +1,9 @@
 __author__ = 'skamer'
-meal = 20
+while True:
+    meal = raw_input("Enter the meal amount before tax: ")
+    if meal.isdigit():
+        meal = int(meal)
+        break
 tax = 0.15
 tip = 0.15
 tax_value = meal * tax
