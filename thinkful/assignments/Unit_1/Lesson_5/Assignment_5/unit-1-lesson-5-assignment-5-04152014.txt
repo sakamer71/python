@@ -1,0 +1,18 @@
+What is raw_input() and what can you do with it?
+	function to prompt user for interactive input within the script
+What is sys.argv and how can you use it to get arguments from the command line? What are some disadvantages to sys.argv?
+	module which is used to parse arguments, positional parameters when script is run from commandline. 
+	argv[1], 2, etc... can then be set as variables and used in your script
+	allows script to collect input non-interactively
+	disadvantage is that the arguments are hard-coded... have to remember which arg position associated with which option
+	
+Explain at a high level what OptionParser allows you to do?
+	allows you to dictate what the name of each argument is... easier to understand
+	has built-in helpfile which lists defined options and their usage
+	allows options to be used in any order and referenced by long or short name
+How can you import a module into a Python script?
+	import modulename
+How can you import one specific item from a module into a Python script?
+	from modulename import item
+What is the purpose of the "shebang" appearing on the first line of a Python script?
+	tells unix OS where to find the python interpreter so that it can be executed via ./ command
