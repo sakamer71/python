@@ -1,0 +1,48 @@
+Unit 1 Lesson 6 Assignment 4
+
+You should memorize what the following comparators do: ==, !=, <, <=, >, >=
+	equal to, not equal to, lessthan, lessthanorequalto, greaterthan, greaterthanorequalto
+You should memorize what the following boolean operators do: and, or, not
+	got it.
+You should know the order of precedence for boolean operators in Python
+	not comes first, then and/or 
+How do if, elif, and else work? Provide an example of how you’d implement if/elif/else in a script.
+	if condition is true, then execute if codeblock and exit if/elif/else statement
+	if condition not true, then if the elif condition is true, execute the elif codeblock, and exit if/elif/else statement
+	if both the if and elif conditions are not true, execute the else codeblock and exit the statement
+	
+	name = 'steve'
+	if name == 'john':
+		print "i know you {}".format(name)
+	elif name == 'steve':
+		print "i think i know you {}".format(name)
+	else:
+		print "i dont know you {}".format(name)
+		
+Memorize the syntax and concept behind for and while loops
+	ok
+What does the range() function do in Python? How could you use range() along with a for loop to print out the numbers between 1 and 100, each on its own line?
+	creates list of sequential numbers from 0 to but not including your endpoint of range  - or takes other options to print other sequences of numbers
+	for i in range(1,101):    print i
+What’s the difference between break and continue in the context of a loop?
+	break exits the loop and its parent of the loop,  continue only breaks out of the remainder of that statement, and then continues to next iteration
+Can you use a for statement on a string? If so, what does it do?
+	it treats each character of the string as an item in a sequence
+		i.e.   for i in "steve" :  print i
+			this returns:
+			s
+			t
+			e
+			v
+			e
+What is a list comprehension? Given the following: my_list = [1,2,3,4,5,6,7,8], how could you use a list comprehension to create a variable new_list that is comprised of each of the numbers in the original list, multiplied by 5?
+	new_list=[x*5 for x in my_list]
+How would you transform my_list to new_list like in question 9, but without a list comprehension?
+	new_list=[]
+	for x in my_list:
+		new_list.append(x*5)
+		
+What is an infinite loop, and why could it create problems?
+	it is a while loop - while a condition is true execute codeblock over and over until condition is no longer true.
+	problem would arise if condition is never not true - b/c the loop would never exit, and script would never finish.
+	
