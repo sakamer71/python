@@ -1,0 +1,48 @@
+Unit 1 lesson 7 assignment 5
+
+Given text = ‘abcdefghabcdefgh’, what would text.find(‘c’) return?
+	the index position in the string where the match began  (index position 2)
+What are the limitations of doing string parsing using built in string methods? For instance, is there a straightforward way to find the index of "ear" (as a full word) in the following string, using the string method .index(): "the bear's clear ear stokes fear"?
+	no not really, b/c it would match ear in bear's first
+	you could match ear with space before and after but that only works if there is actually a space afterwards.
+		i.e. "the bear cleared his ear." wouldnt match b/c of the period after ear
+Explain in your own words what regular expressions are and why they’re useful.
+	regular expression is a series of rules or patterns you use to build advanced searches for strings within other strings or objects - 
+How do you import the regular expression module?
+	import re
+Memorize the following basic regex syntax for searches in Python: match = re.search(pattern, text)
+	got it.
+Using the example in 5, what would the value of match be if the pattern was not found in text?
+	it would return nothing, or None
+What does placing a lowercase r before your regex strings do, and why is it a good idea?
+	it treats the search pattern literally, and doesnt require you to comment out special characters
+	makes it simpler to build regex patterns in python
+How could you use the re.sub() method to change the British spelling "colour" to the American spelling convention of "color" in the following text? text = "The colour of the sun is orange. The colour of the sky is blue."
+	text = re.sub('colour','color',text)
+How could you use the word boundary (\b) character to create a regular expression that would detect "word" but not "swordfish" in the following sentence: "Swordfish is a word."?
+	re.search(r'\bword\b','Swordfish is a word')
+What are verbose regular expressions? How do you write a verbose regular expression, and what’s the advantage of doing so?
+	it allows you to have extra spaces, newlines, and comments within the regex itself, so that it is easier to understand... since regex is pretty cryptic.
+	you write it using triple quotes and then format it however makes it most readable'
+	to call it with an re function, you need to also pass the re.VERBOSE option
+	advantages are , possibly easier to understand
+Rewrite the following regular expression using the verbose option, and use comments to describe what each part is doing: re.compile(r'(\d{3})\D*(\d{3})\D*(\d{4})\D*(\d*)$')
+	pattern = '''
+	(\d{3})		# looks for any 3 digits and store it as group1
+	\D*			# followed by 0 or more non-digits
+	\d{3})		# followed by 3 more digits, stored as group2
+	\D*			# followed by 0 or more non-digits
+	\d{4})		# followed by 4 more digits, stored as group3
+	\D*			# followed by 0 or more non-digits	
+	(\d*)		# followed by 0 or more digits
+	$			# end of string
+			'''
+	
+How can you use parentheses () to split up your regular expression into separate groups?
+	if you put part of your overall regex in parentheses, and use search/match, etc function, then your output can include several distinct matches, organized in a tuple, like matching pattern1 pattern2 and pattern3 in in search
+One of the best ways to get fluent in regex is to break down a terse regex pattern into a verbose one with comments. The following patterns are taken from this Gist which you covered in the document tagger project. Rewrite each of the following using re.VERBOSE and add comments that explain the components of each pattern are doing:
+author_search = re.compile(r'(author:)(?P<author>.*)')
+pattern = '''
+	STILL NEED TO WORK ON THIS	
+translator_search = re.compile(r'(translator:)(?P<translator>.*)')
+	STILL NEED TO WORK ON THIS
