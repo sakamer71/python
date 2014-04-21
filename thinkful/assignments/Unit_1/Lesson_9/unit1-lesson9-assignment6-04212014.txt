@@ -1,0 +1,49 @@
+Explain in your own words what a function does.
+	it is a way to store a group of commands that typically perform a single related job.  you write functions so that you can reference the group of commands by a short name - typically used if you intend to execute this block of code more than once, or if you want your program to be modular. 
+What’s the syntax for defining a function?
+	def function_name(arguments):
+		your stuff to execute
+How do you pass parameters (a.ka., arguments) to a function?
+	for each argument that is required by the function, you pass a parameter to the function.
+	i.e. for the function "whats_your_name(first,last)", you would exec
+	whats_your_name(data1, data2) 
+		data1 gets set within the function namespace as value for variable "first"
+		data2 gets set as value for variable "last"
+How can you add a description to a function, and how do you access that description using code?
+	you can use single, double or triple quotes to create a string literal within the function, describing what it does
+	then someone can call help(yourfunction) and it will return the info within the quotes
+	
+What does the return statement in a function do?
+	returns data gathered within the function's namespace to the rest of the script
+	usually, you can collect it by execing a function as the value of a variable.
+	i.e.
+	myoutput = somefunction()
+		whatever somefunction returns will be set as the value of variable myoutput
+What’s the difference between a local and global variable?
+	local variable is only accessible within a specific namespace (i.e. within a function)
+	global variable is accessible within all parts of the program
+Do functions have access to global variables defined outside of the function?
+	yes they do
+How would you call a function from within another function?
+	def function2():
+		function1()
+		
+What is a namespace?
+	still researching - i know what they are within a program and within a function, but i think it is more complicated than this.
+What is the purpose of modules?
+	modules store multiple functions that are related (do similar things)
+	it is a way of organizing your functions so that they dont have to be explicitly defined in your main program file
+What is the most common syntax for importing a module?
+	import modulename
+	from modulename import functionname 
+	from modulename import *
+If I import a module called test and it has a function called do_something(), how would I call that function?
+	test.do_something()
+What would happen if I import two modules both of which have the same function name?
+	so long as you don't import * on both of the modules, you should be fine, b/c you have to
+	call the function with parent module name
+	i.e. python knows that module1.function  and module2.function are different
+What would be the syntax for importing two modules in a way that if they had the same function in both, one would replace the other? (This is a bad idea, but it’s important to understand how to break things so you’re more likely not to!)
+	from module1 import *  , and from module2 import *   (where both module1 and module2 have same function name)
+	or
+	from module1 import functionname, and from module2 import functionname
