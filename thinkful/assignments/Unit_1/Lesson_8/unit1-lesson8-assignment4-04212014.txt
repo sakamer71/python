@@ -1,0 +1,32 @@
+Unit 1 Lesson 8 Assignment 4
+How do you open a file in Python in read only mode? How do you open a file in write mode?
+	to read only, open(filename, 'r')
+	to write, open(filename, 'w') ## this creates or overwrites
+	or
+			  open(filename, 'a+')  ## this creates or appends
+			  
+If you do f = open(‘myfile.txt’, ‘r’), will your variable f be a string?
+	no it will be a file object
+How do you read a file that you’ve opened?
+	you can use the .read method or the .readlines method to return the entire file
+	or you can use readline to return 1 line at a time
+How do you write to a file object?
+	use the write method to write to a file which has been opened with one of the write flags 
+	fileobject.write("your text to be written")
+	then close the fileobject to flush buffer and write to the file
+Why is it critical that you explicitly close your files, especially when you’re writing to one?
+	python doesnt write to the file at the time the command is executed, it writes to a buffer in memory.
+		only writes to the file when you invoke the .close method
+How can you use with and as to open a file and assign its contents to a variable, in order to avoid having to explicitly close the file object?
+	with open("filename",w) as fh:  ## filehandle
+		fh.write("my new text")		
+What does it mean when we say that the data in a file object is buffered?
+	written to memory in OS, not written to the file on disk yet
+What does os.listdir() do?
+	makes a call to the underlying OS filesystem and creates a list of all files in the specified directory
+How can you use os.listdir() and os.path.join() together to iterate over and open files in a given directory?
+			for filename in os.listdir(directory):
+				file = os.path.join(directory,file)
+				fh = open(file,'r')
+				## do stuff with the file
+
