@@ -1,0 +1,122 @@
+edmunds python sdk at https://github.com/EdmundsAPI/sdk-python/tree/master/edmunds
+
+DB Schema:
+bodytype
+	bodyid (pk)
+	bodytype (i.e. coupe, etc)
+
+fueltype
+	fuelid (pk)
+	fueltype
+	
+make
+	makeid(pk)
+	makename
+	makenicename
+	
+model
+	modelid(pk)
+	makeid(fk)
+	modelname
+	modelnicename
+	year
+
+modelspecs
+	styleid (pk)
+	modelid (fk)
+	trim  (LX-S)
+	submodel/modelName  (Accord Coupe)
+	body  (i.e. sedan, hatchback)
+	engine/name
+	engine/cylinder
+	engine/displacement (i.e. 2488)
+	engine/horsepower
+	engine/torque
+	engine/type  (i.e.  gas, hybrid)
+	transmission/transmissionType  (i.e. automatic)
+	numofDoors
+	drivenWheels  (i.e. front wheel drive)
+	fabricType (i.e. leatherette)
+	MPG/highway
+	MPG/city
+	1strowheadroom
+	1strowlegroom
+	2ndrowheadroom
+	2ndrowlegroom
+	cargocapacity200459151
+	price/baseMSRP
+	price/baseInvoice
+	categories/vehicleSize  (i.e. midsize)
+	
+	
+modelphotos
+	id (pk)
+	styleid(fk)
+	photos
+	
+	
+user
+	userid (pk)
+	email
+	password
+	fname
+	lname
+	zipcode
+	
+	
+searches
+	searchid (pk)
+	searchname  (keyword to remember search by)
+	userid (fk)
+	searchstring
+	searchdate
+	result1_styleid
+	result1_match_percent
+	result2_styleid
+	result2_match_percent
+	result3_styleid
+	result3_match_percent
+	result4_styleid
+	result4_match_percent
+	result5_styleid
+	result5_match_percent
+	
+	
+	
+	
+	
+	
+make and model can be collected via
+https://api.edmunds.com/api/vehicle/v2/makes?state=new&year=2014&view=basic&fmt=json&api_key=b34wypjmb2fjf85asccqrv3z
+
+model specs (styleid, modelid, trim, submodel-modelName, body) can be collected via
+https://api.edmunds.com/api/vehicle/v2/mazda/mazda6?state=new&year=2014&view=full&fmt=json&api_key=b34wypjmb2fjf85asccqrv3z
+
+other model specs (	engine/name
+	engine/cylinder
+	engine/displacement (i.e. 2488)
+	engine/horsepower
+	engine/torque
+	engine/type  (i.e.  gas, hybrid)
+	transmission/transmissionType  (i.e. automatic)
+	numofDoors
+	drivenWheels  (i.e. front wheel drive)
+	fabricType (i.e. leatherette)
+	MPG/highway
+	MPG/city) can be collected via query of styleid...
+https://api.edmunds.com/api/vehicle/v2/styles/200459151?view=full&fmt=json&api_key=b34wypjmb2fjf85asccqrv3z
+
+model interior dimensions can be collected via:
+https://api.edmunds.com/api/vehicle/v2/styles/200459151/equipment?availability=standard&name=INTERIOR_DIMENSIONS&fmt=json&api_key=b34wypjmb2fjf85asccqrv3z
+
+model cargo space can be collected via:
+https://api.edmunds.com/api/vehicle/v2/styles/200459151/equipment?availability=standard&name=CARGO_DIMENSIONS&fmt=json&api_key=b34wypjmb2fjf85asccqrv3z
+
+
+
+
+model photos can be collected via:
+https://api.edmunds.com/v1/api/vehiclephoto/service/findphotosbystyleid?styleId=200459151&fmt=json&api_key=b34wypjmb2fjf85asccqrv3z
+
+model msrp, invoice, vehiclesize can be collected via:
+https://api.edmunds.com/api/vehicle/v2/styles/200459151?view=full&fmt=json&api_key=b34wypjmb2fjf85asccqrv3z
