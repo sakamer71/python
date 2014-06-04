@@ -1,0 +1,60 @@
+What’s a syntax error?
+	like grammatical errors for programming, you arent using the right punctuation or format that the interpreter expects.
+	
+What’s an exception?
+	when the program is syntactically accurate, but the inputs/outputs violate the constraints of functions/modules, etc.
+
+What’s a stack trace?
+	output from python showing where, within the code an exception occurred, what the exception type and info is, and, whatever parent calls were made that called the code whic triggered the exception.
+
+How might you use the information contained in your stack trace to debug your code?
+	you can look at the exception type, and the content next to the exception type to see what type of error it was.
+	you can use the line number to show you where in your script the exception occurred
+	you can use the parent info to see what may have called this bit of bad code
+	
+Name some common, built-in exception types in Python. Give an example of some code that would trigger each one of the exceptions you’ve listed.
+		NameError: trying to reference a nam (variable) which isnt defined.
+			print hello  (where hello is not a defined variable)
+		ZeroDivisionError:  trying to divide by 0
+			print 1/0
+		ImportError:  trying to import a method that isnt part of the specified module
+			from re import steve
+		AttributeError:  trying to call an attribute of a module that isnt defined in the module
+			re.steve()
+			
+		
+What does the raise statement do?
+	it forces an exception without evaluating anything first. - used for debugging.
+What is the difference between a try/except block and a try/except/finally block?
+	in try/except  the try block gets executed, and if an exception is raised, the code skips to the except block, executes it, and then exits the script
+	in try/except/finally - same as above, but after the try &/or exception block is executed, the finally block is ALWAYS executed.
+Describe how the following try/except blocks would work:
+try:
+    do_something()
+except Exception:
+    print 'Something went wrong'
+	first execute the do_something function. if it completes with a value of False or an error, then print 'Something went wrong'
+
+	try:
+    do_something()
+except Exception as e:
+    print e.message
+	same as above, but it allows you to pull object info from the exception, stored as tuple
+try:
+    do_something()
+except (RuntimeError, TypeError, NameError):
+    print 'Something went wrong'
+	only executes the except code if one of the 3 specific error types above is met.
+	
+try:
+    do_something()
+except Exception as inst:
+    print dir(inst)
+	if the exception is raised, instantiate the exception object, and list all of the attributes of the object.
+	
+What does the assert statement do in Python, and when might you use it?
+	also for debugging
+	it is a shorthand way to test a condition, and if false, raises an exception
+	
+How would you use pdb.set_trace() to set a breakpoint in your code?
+How can you get the values of variables as you’re stepping through your code in pdb?

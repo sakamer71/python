@@ -1,0 +1,35 @@
+Unit 2 Lesson 6 Assignment 4
+
+Test Your Comprehension for this Lesson
+
+    What is a class in Python?
+		a blueprint object which describes the idea of something that includes 1 or more variables and functions.
+		purpose is to allow multiple variables and functions to be used together, be replicated and changed as needed.
+    What is the syntax for defining a class?
+		class Classname(object):
+    What is a class method, and how do you define one?
+		it is a function within the class
+			def functionname(self, someother,list,of,parameters):
+    What is a class attribute?
+		it is a variable within a class, accessible by all methods within the same class or instances of the class
+    What is an instance?
+		it is the object, called by a variable name, occupying it's own unique memory space
+    What spelling convention should you observe when naming classes?
+		first letter of class should be capitalized
+    How do you access attributes and methods on an instance of a class?
+		classname.attribute or classname.method()
+    What does self do in a class?
+		it is used to access methods and attributes of the class from within the class
+    What is the __init__() method, and how can you use it to require and assign attributes when an instance of a class is created?
+		this is the method which, when executed, creates the instance of the class (i.e. assigning all variables/method to a memory space)
+		you can require positional or named parameters the same way you do for any other function
+    What should a class inherit from if it doesn’t inherit from any of your other classes? How would you write that in the class definition?
+		it should inherit from self??
+    What is inheritance? Give an example that demonstrates how inheritance can avoid duplicating code across similar kinds of objects.
+		creating a new child class which wraps around a parent class and inherits the attributes&methods of the parent class.
+			i.e if you have a parent class car with attributes tires=4, steeringwheel=1, def drive(self) because you assume that all cars have 4 tires, 1 steering wheel, and drive.
+			Then you might create separate child classes, one for auto-transmission, and another for manual transmission, b/c the way they shift gears is different enough that you want to treat them differently, but you still want them to inherit the attributes of the parent class (tires, steeringwheel, drive)
+		
+    What does it mean when we say that a child class can override the attributes or methods of its parent class?
+		if a parent class has an attribute like color="red", the child automatically inherits that.  But the child class can also have an attribute or method which changes the value of color.
+
